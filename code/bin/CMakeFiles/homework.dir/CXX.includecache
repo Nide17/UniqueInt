@@ -6,17 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/acv/dsa/hw01/code/src/UniqueInt.cpp
+/home/acv/dsa/UniqueInt/code/src/UniqueInt.cpp
 UniqueInt.h
-/home/acv/dsa/hw01/code/src/UniqueInt.h
+/home/acv/dsa/UniqueInt/code/src/UniqueInt.h
 
-/home/acv/dsa/hw01/code/src/UniqueInt.h
+/home/acv/dsa/UniqueInt/code/src/UniqueInt.h
 iostream
 -
 fstream
 -
 util/LogManager.h
-/home/acv/dsa/hw01/code/src/util/LogManager.h
+/home/acv/dsa/UniqueInt/code/src/util/LogManager.h
 limits.h
 -
 math.h
@@ -24,11 +24,11 @@ math.h
 unistd.h
 -
 
-/home/acv/dsa/hw01/code/src/homework.cpp
+/home/acv/dsa/UniqueInt/code/src/homework.cpp
 homework.h
-/home/acv/dsa/hw01/code/src/homework.h
+/home/acv/dsa/UniqueInt/code/src/homework.h
 
-/home/acv/dsa/hw01/code/src/homework.h
+/home/acv/dsa/UniqueInt/code/src/homework.h
 string.h
 -
 iostream
@@ -38,17 +38,17 @@ fstream
 chrono
 -
 util/GetMemUsage.h
-/home/acv/dsa/hw01/code/src/util/GetMemUsage.h
+/home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.h
 util/LogManager.h
-/home/acv/dsa/hw01/code/src/util/LogManager.h
+/home/acv/dsa/UniqueInt/code/src/util/LogManager.h
 UniqueInt.h
-/home/acv/dsa/hw01/code/src/UniqueInt.h
+/home/acv/dsa/UniqueInt/code/src/UniqueInt.h
 
-/home/acv/dsa/hw01/code/src/util/GetMemUsage.cpp
+/home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.cpp
 GetMemUsage.h
-/home/acv/dsa/hw01/code/src/util/GetMemUsage.h
+/home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.h
 
-/home/acv/dsa/hw01/code/src/util/GetMemUsage.h
+/home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.h
 windows.h
 -
 psapi.h
@@ -66,11 +66,11 @@ procfs.h
 stdio.h
 -
 
-/home/acv/dsa/hw01/code/src/util/LogManager.cpp
+/home/acv/dsa/UniqueInt/code/src/util/LogManager.cpp
 LogManager.h
-/home/acv/dsa/hw01/code/src/util/LogManager.h
+/home/acv/dsa/UniqueInt/code/src/util/LogManager.h
 
-/home/acv/dsa/hw01/code/src/util/LogManager.h
+/home/acv/dsa/UniqueInt/code/src/util/LogManager.h
 stdlib.h
 -
 string.h

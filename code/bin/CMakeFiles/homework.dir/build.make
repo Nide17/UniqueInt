@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/acv/dsa/hw01/code
+CMAKE_SOURCE_DIR = /home/acv/dsa/UniqueInt/code
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/acv/dsa/hw01/code/bin
+CMAKE_BINARY_DIR = /home/acv/dsa/UniqueInt/code/bin
 
 # Include any dependencies generated for this target.
 include CMakeFiles/homework.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/homework.dir/flags.make
 
 CMakeFiles/homework.dir/src/UniqueInt.cpp.o: CMakeFiles/homework.dir/flags.make
 CMakeFiles/homework.dir/src/UniqueInt.cpp.o: ../src/UniqueInt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/hw01/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/homework.dir/src/UniqueInt.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/UniqueInt.cpp.o -c /home/acv/dsa/hw01/code/src/UniqueInt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/UniqueInt/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/homework.dir/src/UniqueInt.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/UniqueInt.cpp.o -c /home/acv/dsa/UniqueInt/code/src/UniqueInt.cpp
 
 CMakeFiles/homework.dir/src/UniqueInt.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/homework.dir/src/UniqueInt.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/hw01/code/src/UniqueInt.cpp > CMakeFiles/homework.dir/src/UniqueInt.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/UniqueInt/code/src/UniqueInt.cpp > CMakeFiles/homework.dir/src/UniqueInt.cpp.i
 
 CMakeFiles/homework.dir/src/UniqueInt.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/homework.dir/src/UniqueInt.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/hw01/code/src/UniqueInt.cpp -o CMakeFiles/homework.dir/src/UniqueInt.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/UniqueInt/code/src/UniqueInt.cpp -o CMakeFiles/homework.dir/src/UniqueInt.cpp.s
 
 CMakeFiles/homework.dir/src/UniqueInt.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/homework.dir/src/UniqueInt.cpp.o.provides.build: CMakeFiles/homework.
 
 CMakeFiles/homework.dir/src/homework.cpp.o: CMakeFiles/homework.dir/flags.make
 CMakeFiles/homework.dir/src/homework.cpp.o: ../src/homework.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/hw01/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/homework.dir/src/homework.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/homework.cpp.o -c /home/acv/dsa/hw01/code/src/homework.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/UniqueInt/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/homework.dir/src/homework.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/homework.cpp.o -c /home/acv/dsa/UniqueInt/code/src/homework.cpp
 
 CMakeFiles/homework.dir/src/homework.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/homework.dir/src/homework.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/hw01/code/src/homework.cpp > CMakeFiles/homework.dir/src/homework.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/UniqueInt/code/src/homework.cpp > CMakeFiles/homework.dir/src/homework.cpp.i
 
 CMakeFiles/homework.dir/src/homework.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/homework.dir/src/homework.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/hw01/code/src/homework.cpp -o CMakeFiles/homework.dir/src/homework.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/UniqueInt/code/src/homework.cpp -o CMakeFiles/homework.dir/src/homework.cpp.s
 
 CMakeFiles/homework.dir/src/homework.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/homework.dir/src/homework.cpp.o.provides.build: CMakeFiles/homework.d
 
 CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o: CMakeFiles/homework.dir/flags.make
 CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o: ../src/util/GetMemUsage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/hw01/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o -c /home/acv/dsa/hw01/code/src/util/GetMemUsage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/UniqueInt/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o -c /home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.cpp
 
 CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/hw01/code/src/util/GetMemUsage.cpp > CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.cpp > CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.i
 
 CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/hw01/code/src/util/GetMemUsage.cpp -o CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.cpp -o CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.s
 
 CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o.provides.build: CMakeFiles/ho
 
 CMakeFiles/homework.dir/src/util/LogManager.cpp.o: CMakeFiles/homework.dir/flags.make
 CMakeFiles/homework.dir/src/util/LogManager.cpp.o: ../src/util/LogManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/hw01/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/homework.dir/src/util/LogManager.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/util/LogManager.cpp.o -c /home/acv/dsa/hw01/code/src/util/LogManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/acv/dsa/UniqueInt/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/homework.dir/src/util/LogManager.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/homework.dir/src/util/LogManager.cpp.o -c /home/acv/dsa/UniqueInt/code/src/util/LogManager.cpp
 
 CMakeFiles/homework.dir/src/util/LogManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/homework.dir/src/util/LogManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/hw01/code/src/util/LogManager.cpp > CMakeFiles/homework.dir/src/util/LogManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/acv/dsa/UniqueInt/code/src/util/LogManager.cpp > CMakeFiles/homework.dir/src/util/LogManager.cpp.i
 
 CMakeFiles/homework.dir/src/util/LogManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/homework.dir/src/util/LogManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/hw01/code/src/util/LogManager.cpp -o CMakeFiles/homework.dir/src/util/LogManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/acv/dsa/UniqueInt/code/src/util/LogManager.cpp -o CMakeFiles/homework.dir/src/util/LogManager.cpp.s
 
 CMakeFiles/homework.dir/src/util/LogManager.cpp.o.requires:
 
@@ -169,7 +169,7 @@ homework: CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o
 homework: CMakeFiles/homework.dir/src/util/LogManager.cpp.o
 homework: CMakeFiles/homework.dir/build.make
 homework: CMakeFiles/homework.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/acv/dsa/hw01/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable homework"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/acv/dsa/UniqueInt/code/bin/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable homework"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/homework.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -189,6 +189,6 @@ CMakeFiles/homework.dir/clean:
 .PHONY : CMakeFiles/homework.dir/clean
 
 CMakeFiles/homework.dir/depend:
-	cd /home/acv/dsa/hw01/code/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/acv/dsa/hw01/code /home/acv/dsa/hw01/code /home/acv/dsa/hw01/code/bin /home/acv/dsa/hw01/code/bin /home/acv/dsa/hw01/code/bin/CMakeFiles/homework.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/acv/dsa/UniqueInt/code/bin && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/acv/dsa/UniqueInt/code /home/acv/dsa/UniqueInt/code /home/acv/dsa/UniqueInt/code/bin /home/acv/dsa/UniqueInt/code/bin /home/acv/dsa/UniqueInt/code/bin/CMakeFiles/homework.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/homework.dir/depend
 

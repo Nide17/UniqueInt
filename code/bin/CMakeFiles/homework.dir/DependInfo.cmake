@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/acv/dsa/hw01/code/src/UniqueInt.cpp" "/home/acv/dsa/hw01/code/bin/CMakeFiles/homework.dir/src/UniqueInt.cpp.o"
-  "/home/acv/dsa/hw01/code/src/homework.cpp" "/home/acv/dsa/hw01/code/bin/CMakeFiles/homework.dir/src/homework.cpp.o"
-  "/home/acv/dsa/hw01/code/src/util/GetMemUsage.cpp" "/home/acv/dsa/hw01/code/bin/CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o"
-  "/home/acv/dsa/hw01/code/src/util/LogManager.cpp" "/home/acv/dsa/hw01/code/bin/CMakeFiles/homework.dir/src/util/LogManager.cpp.o"
+  "/home/acv/dsa/UniqueInt/code/src/UniqueInt.cpp" "/home/acv/dsa/UniqueInt/code/bin/CMakeFiles/homework.dir/src/UniqueInt.cpp.o"
+  "/home/acv/dsa/UniqueInt/code/src/homework.cpp" "/home/acv/dsa/UniqueInt/code/bin/CMakeFiles/homework.dir/src/homework.cpp.o"
+  "/home/acv/dsa/UniqueInt/code/src/util/GetMemUsage.cpp" "/home/acv/dsa/UniqueInt/code/bin/CMakeFiles/homework.dir/src/util/GetMemUsage.cpp.o"
+  "/home/acv/dsa/UniqueInt/code/src/util/LogManager.cpp" "/home/acv/dsa/UniqueInt/code/bin/CMakeFiles/homework.dir/src/util/LogManager.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
