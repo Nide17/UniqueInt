@@ -15,33 +15,34 @@
 #include <math.h>
 #include <unistd.h>
 
-class UniqueInt{
+class UniqueInt
+{
 	/**
 	 * This function must take as input a file stream that is open, read the next line
 	 * and return an integer if it is valid.
 	 *
-        a. If there are any lines with no inputs, those lines must be skipped.
-        b. If there are any lines that contain a non-integer input, those lines must be skipped.
- 	 	 If end of file is reached, it must throw an end of file error
+		a. If there are any lines with no inputs, those lines must be skipped.
+		b. If there are any lines that contain a non-integer input, those lines must be skipped.
+		 If end of file is reached, it must throw an end of file error
 	 */
-	static int readNextItemFromFile(FILE* inputFileStream);
+	static int readNextItemFromFile(FILE *inputFileStream);
 
-	static void gotoNextLineInFile(FILE* inputFileStream){
+	static void gotoNextLineInFile(FILE *inputFileStream)
+	{
 		char str[2];
-		char* fileReadStatus = fgets(str, 2, inputFileStream);
+		char *fileReadStatus = fgets(str, 2, inputFileStream);
 		LogManager::writePrintfToLog(LogManager::Level::Status,
-						"UniqueInt::gotoNextLineInFile",
-						"str=%s++", str);
+									 "UniqueInt::gotoNextLineInFile",
+									 "str=%s++", str);
 
-		while (! (fileReadStatus == NULL || str[0] == '\n')){
+		while (!(fileReadStatus == NULL || str[0] == '\n'))
+		{
 			fileReadStatus = fgets(str, 2, inputFileStream);
 			LogManager::writePrintfToLog(LogManager::Level::Status,
-							"UniqueInt::gotoNextLineInFile",
-							"str=%s//", str);
-
+										 "UniqueInt::gotoNextLineInFile",
+										 "str=%s//", str);
 		}
 	};
-
 
 public:
 	/**
@@ -54,7 +55,7 @@ public:
 	 * If the input file cannot be read throw an error of type ios_base::failure
 	 * If the output file cannot be generated, then throw an error of type ios_base::failure
 	 */
-	static int processFile(char* inputFilePath, char* outputFilePath);
+	static int processFile(char *inputFilePath, char *outputFilePath);
 };
 
 #endif /* UNIQUEINT_H_ */

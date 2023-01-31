@@ -8,7 +8,6 @@
 
 int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
 {
-
 	if (!inputFileStream)
 	{
 		char message[35] = "Cannot open input file for reading";
@@ -20,17 +19,24 @@ int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
 	// READ ONE LINE AT A TIME FROM THE INPUT FILE - UNTIL EOF IS REACHED
 	while (true)
 	{
-		
 		char line[100]; // LINE BUFFER TO STORE THE LINE READ FROM THE INPUT FILE
 
 		// READ ONE LINE AT A TIME FROM THE INPUT FILE AND STORE IT IN THE LINE BUFFER
-		char *fileReadStatus = fgets(line, 100, inputFileStream);
+		char *fileReadStatus;
 
 		// WHEN fgets() REACHES EOF, IT RETURNS NULL - BREAK THE LOOP IF NULL IS RETURNED
-		if (fileReadStatus == NULL)
+		if (!(fileReadStatus = fgets(line, 100, inputFileStream)))
 		{
-			returnInteger = EOF;
-			break;
+			// IF fgets() RETURNS NULL, CHECK IF THE INPUT FILE HAS REACHED EOF
+			if (feof(inputFileStream))
+				break; // BREAK THE LOOP IF EOF IS REACHED
+
+			// IF fgets() RETURNS NULL, BUT THE INPUT FILE HAS NOT REACHED EOF, THROW AN EXCEPTION
+			else
+			{
+				char message[35] = "Cannot read from input file";
+				throw std::ios_base::failure(message);
+			}
 		}
 
 		// REMOVE ANY LEADING AND TRAILING WHITE SPACES FROM THE LINE
@@ -78,10 +84,6 @@ int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
 int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
 {
 
-	// CREATE A BOOLEAN ARRAY OF SIZE 2047 TO STORE THE UNIQUE NUMBERS
-	bool isEncountered[2047] = {false};
-
-	// OPEN THE INPUT FILE FOR READING
 	FILE *inFileStream = fopen(inputFilePath, "r");
 	if (!inFileStream)
 	{
@@ -90,7 +92,6 @@ int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
 		throw std::ios_base::failure(message);
 	}
 
-	// OPEN THE OUTPUT FILE FOR WRITING
 	FILE *outFileStream = fopen(outputFilePath, "w");
 	if (!outFileStream)
 	{
@@ -101,29 +102,30 @@ int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
 	LogManager::writePrintfToLog(LogManager::Level::Status,
 								 "UniqueInt::processFile",
 								 "Starting the processing inFile=%s", inputFilePath);
+
+	// READ THE INPUT FILE UNTIL EOF IS REACHED
 	try
 	{
+		// CREATE A BOOLEAN ARRAY OF SIZE 2047 TO STORE THE UNIQUE NUMBERS
+		bool isEncountered[2047] = {false};
+
+		// OPEN THE INPUT FILE FOR READING
+		// READ THE INPUT FILE UNTIL EOF IS REACHED
 		while (true)
 		{
-			// READ THE NEXT ITEM FROM THE INPUT FILE
+
+			// READ ONE INTEGER AT A TIME FROM THE INPUT FILE
 			int number = readNextItemFromFile(inFileStream);
+			LogManager::writePrintfToLog(LogManager::Level::Status, "UniqueInt::processFile",
+										 "number=%d", number);
 
-			// PRINT THE NUMBER TO CONSOLE
-			std::cout << number << std::endl;
-
-			// IF EOF REACHED, BREAK THE LOOP
-			if (number == EOF)
+			// IF EOF IS REACHED, BREAK THE LOOP
+			if (feof(inFileStream))
 				break;
 
-			// IF NUMBER NOT ENCOUNTERED AT index = number + 1023, SET THE VALUE OF ARRAY TO true
+			// IF THE NUMBER IS UNIQUE, SET THE CORRESPONDING BOOLEAN ARRAY ELEMENT TO TRUE
 			if (!isEncountered[number + 1023])
 				isEncountered[number + 1023] = true;
-
-			// IF NUMBER ENCOUNTERED BEFORE, SKIP THE NUMBER
-			else
-				continue;
-
-			LogManager::writePrintfToLog(LogManager::Level::Status, "UniqueInt::processFile", "number=%d", number);
 		}
 
 		// WRITE THE UNIQUE NUMBERS TO THE OUTPUT FILE
@@ -134,6 +136,7 @@ int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
 				fprintf(outFileStream, "%d\n", i - 1023);
 		}
 	}
+
 	catch (std::invalid_argument &e)
 	{
 		LogManager::writePrintfToLog(LogManager::Level::Status,
