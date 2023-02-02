@@ -26,8 +26,17 @@ int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
 		// Check if the end of file is reached - if yes, stop the loop and make the return value as EOF
 		if (fileReadStatus == NULL)
 		{
-			returnInteger = EOF;
-			break;
+
+			// IF fgets() RETURNS NULL, CHECK IF THE INPUT FILE HAS REACHED EOF
+			if (feof(inputFileStream))
+				break; // BREAK THE LOOP IF EOF IS REACHED
+
+			// IF fgets() RETURNS NULL, BUT THE INPUT FILE HAS NOT REACHED EOF, THROW AN EXCEPTION
+			else
+			{
+				char message[35] = "Cannot read from input file";
+				throw std::ios_base::failure(message);
+			}
 		}
 
 		// Check if the line is empty
@@ -200,6 +209,7 @@ int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
 		if (dynamicIntegers != NULL)
 			delete[] dynamicIntegers;
 	}
+
 	catch (std::invalid_argument &e)
 	{
 		LogManager::writePrintfToLog(LogManager::Level::Status,

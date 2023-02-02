@@ -19,13 +19,13 @@ int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
     // READ ONE LINE AT A TIME FROM THE INPUT FILE - UNTIL EOF IS REACHED
     while (true)
     {
-        char line[100]; // LINE BUFFER TO STORE THE LINE READ FROM THE INPUT FILE
+        char lineBuffer[1000]; // LINE BUFFER TO STORE THE LINE READ FROM THE INPUT FILE
 
         // READ ONE LINE AT A TIME FROM THE INPUT FILE AND STORE IT IN THE LINE BUFFER
-        char *fileReadStatus;
+        char *oneLineReading;
 
         // WHEN fgets() REACHES EOF, IT RETURNS NULL - BREAK THE LOOP IF NULL IS RETURNED
-        if (!(fileReadStatus = fgets(line, 100, inputFileStream)))
+        if (!(oneLineReading = fgets(lineBuffer, 1000, inputFileStream)))
         {
             // IF fgets() RETURNS NULL, CHECK IF THE INPUT FILE HAS REACHED EOF
             if (feof(inputFileStream))
@@ -40,29 +40,29 @@ int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
         }
 
         // REMOVE ANY LEADING AND TRAILING WHITE SPACES FROM THE LINE
-        int i = 0, j = strlen(line) - 1;
+        int start = 0, end = strlen(lineBuffer) - 1;
 
-        // REMOVE LEADING WHITE SPACES
-        while (i < strlen(line) && isspace(line[i]))
-            i++;
+        // REMOVE LEADING WHITE SPACES (AT THE BEGINNING OF THE LINE)
+        while (start < strlen(lineBuffer) && isspace(lineBuffer[start]))
+            start++;
 
-        // REMOVE TRAILING WHITE SPACES
-        while (j >= 0 && isspace(line[j]))
-            j--;
+        // REMOVE TRAILING WHITE SPACES (AT THE END OF THE LINE)
+        while (end >= 0 && isspace(lineBuffer[end]))
+            end--;
 
         // IF THE LINE IS EMPTY, SKIP THE LINE
-        if (line[i] == '\n')
+        if (lineBuffer[start] == '\n')
             continue;
 
         // POINTER TO STORE THE ADDRESS OF THE FIRST INVALID CHARACTER
-        char *endptr;
+        char *firstInvalidChar;
 
         // START CONVERSION OF THE LINE TO A LONG INT FROM THE FIRST NON-WHITE SPACE CHARACTER
-        long int number = strtol(line + i, &endptr, 10);
+        long int number = strtol(lineBuffer + start, &firstInvalidChar, 10);
 
-        // IF strtol() DOES NOT CONVERT ANY CHARACTER, IT RETURNS 0 AND endptr IS SET TO line + i
-        // SO, IF THE LINE IS NOT A VALID INTEGER, endptr WILL BE EQUAL TO line + i
-        if (number == 0 && endptr == line + i)
+        // IF strtol() DOES NOT CONVERT ANY CHARACTER, IT RETURNS 0 AND firstInvalidChar IS SET TO line + i
+        // SO, IF THE LINE IS NOT A VALID INTEGER, firstInvalidChar WILL BE EQUAL TO line + i
+        if (number == 0 && firstInvalidChar == lineBuffer + start)
             continue;
 
         // IF THE LINE IS A VALID INTEGER, BUT OUT OF RANGE, SKIP THE LINE
@@ -70,7 +70,7 @@ int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
             continue;
 
         // IF THE LINE IS A VALID INTEGER, BUT CONTAINS EXTRA CHARACTERS, SKIP THE LINE
-        if (endptr != line + j + 1)
+        if (firstInvalidChar != lineBuffer + end + 1)
             continue;
 
         // IF THE LINE IS A VALID INTEGER, RETURN THE INTEGER
@@ -107,10 +107,9 @@ int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
     try
     {
         // CREATE A BOOLEAN ARRAY OF SIZE 2047 TO STORE THE UNIQUE NUMBERS
-        bool isEncountered[2047] = {false};
+        bool isEncountered[2047] = {false}; // INDEX 0 => -1023, INDEX 1023 => 0, INDEX 2046 => 1023
 
-        // OPEN THE INPUT FILE FOR READING
-        // READ THE INPUT FILE UNTIL EOF IS REACHED
+        // READING THE INPUT FILE UNTIL EOF IS REACHED
         while (true)
         {
 
@@ -129,11 +128,11 @@ int UniqueInt::processFile(char *inputFilePath, char *outputFilePath)
         }
 
         // WRITE THE UNIQUE NUMBERS TO THE OUTPUT FILE
-        for (int i = 0; i < 2047; i++)
+        for (int index = 0; index < 2047; index++)
         {
             // IF THE NUMBER IS UNIQUE, WRITE IT TO THE OUTPUT FILE
-            if (isEncountered[i] == true)
-                fprintf(outFileStream, "%d\n", i - 1023);
+            if (isEncountered[index] == true)
+                fprintf(outFileStream, "%d\n", index - 1023);
         }
     }
 
