@@ -4,6 +4,10 @@ This is a C++ program that reads a file and returns the first unique integer and
 
 Its two main functions are: readNextItemFromFile and processFile
 
+* readNextItemFromFile: This method is used to read one integer at a time from the input file and return it.
+* processFile: This method is used to process the input file and generate the output file. It takes two arguments, the input file path, and the output file path.
+
+
 1. readNextItemFromFile
 
 This function must take as input a file stream that is open, read the next line
@@ -34,6 +38,6 @@ b. If the output file cannot be generated, then throw an error of type ios_base:
 
    ##### __Usage:__
 
-    * Compile the program using the command `g++ UniqueInt.cpp -o UniqueInt`
-    * Run the program using the command `./UniqueInt input.txt output.txt`
-    * The program will read the input file and write the first unique integer to the output file.
+    * Include the UniqueInt.h header file in your code.
+    * Create an object of the UniqueInt class.
+    * Call the processFile method on the object, passing in the file paths for the input and output files as arguments.

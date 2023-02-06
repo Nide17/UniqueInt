@@ -4,6 +4,17 @@
  *  Created on: Dec 13, 2020
  *      Author: kompalli
  */
+
+/*
+ * UniqueInt.cpp
+ *
+ * Purpose: Reading a list of integers from an input file, then 
+ * Generate an output file having a list of unique integers present in the input file
+ *
+ * Submitted on: February 6, 2023
+ * Co-Author: Niyomwungeri Parmenide ISHIMWE <parmenin@andrew.cmu.edu>
+ */
+
 #include "UniqueInt.h"
 
 int UniqueInt::readNextItemFromFile(FILE *inputFileStream)
